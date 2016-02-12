@@ -2,3 +2,18 @@
 	@include outer-container;
 }
 
+
+.go-back {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+	max-height: 500px;
+	max-width: 330px;
+	min-width: 320px;
+	overflow: auto;
+	text-align: center;
+}
+

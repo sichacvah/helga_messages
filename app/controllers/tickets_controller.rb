@@ -3,9 +3,8 @@ class TicketsController < ApplicationController
 
 	def create
 		@ticket = Ticket.new ticket_params
-		@url = params[:back_url]
 		if @ticket.save
-			redirect_to 'new', notice: "Сообщение принято"
+			redirect_to @ticket, notice: "Сообщение принято"
 		else
 			redirect_to 'new'
 		end
