@@ -11,7 +11,12 @@
 <body>
 
 <div id="main" role="main">
-	<%= yield %>
+
+<% flash.each do |key, value| %>
+  <p> <%= value %></p>
+<% end %>
+
+<%= yield %>
 </div>
 
 </body>
