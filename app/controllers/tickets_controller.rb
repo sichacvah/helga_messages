@@ -4,7 +4,7 @@ class TicketsController < ApplicationController
 	def create
 		@ticket = Ticket.new ticket_params
 		if @ticket.save
-      TicketMailer.recieve_mail(@ticket.email, @ticket.name, @ticket.message).deliver_now
+      TicketMailer.recieve_mail(@ticket).deliver_now
 			redirect_to @ticket, notice: "Сообщение принято"
 		else
 			redirect_to 'new'
