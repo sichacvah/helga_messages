@@ -1,7 +1,7 @@
 class TicketMailer < ApplicationMailer
   def recieve_mail ticket
     @ticket = ticket
-    mail(to: emails, subject: "Вы получили сообщение", from: from)
+    mail(to: emails, subject: "Вы получили сообщение", from: @ticket.email)
   end
 
   def send_response to, name, subject
