@@ -38,4 +38,19 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+   
+# Do not dump schema after migrations.
+  config.action_mailer.default_url_options = { host: 'helga-messages.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    post: 587,
+    address: 'smtp.maigun.org',
+    domain: ENV['MAILGUN_DOMAIN'],
+    user_name: ENV['MAILGUN_LOGIN'],
+    password: ENV['MAILGUN_PASSWORD'],
+    authenication: :plain
+  }
+  
+ 
 end

@@ -74,6 +74,19 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # Do not dump schema after migrations.
+# Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { host: '127.0.0.1:3000' }
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    post: 587,
+    address: 'smtp.maigun.org',
+    domain: ENV['MAILGUN_DOMAIN'],
+    user_name: ENV['MAILGUN_LOGIN'],
+    password: ENV['MAILGUN_PASSWORD'],
+    authenication: :plain
+  }
+
+
 end
