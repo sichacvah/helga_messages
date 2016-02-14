@@ -12,9 +12,9 @@
 
 <div id="main" role="main">
 
-<% flash.each do |key, value| %>
-  <p> <%= value %></p>
-<% end %>
+  <% flash.each do |key, value| %>
+    <p class="flash"> <%= value %></p>
+  <% end %>
 
 <%= yield %>
 </div>
