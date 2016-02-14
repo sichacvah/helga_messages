@@ -1,5 +1,5 @@
 class Ticket < ActiveRecord::Base
-  after_create :send_notification
+  #after_create :send_notification
 
   private
 
