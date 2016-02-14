@@ -49,7 +49,7 @@ Rails.application.configure do
     domain: ENV['MAILGUN_DOMAIN'],
     user_name: ENV['MAILGUN_LOGIN'],
     password: ENV['MAILGUN_PASSWORD'],
-    authenication: :plain
+    authentication: :plain
   }
   
  

@@ -4,6 +4,10 @@ class Ticket < ActiveRecord::Base
   private
 
   def send_notification
-    TicketMailer.recieve_mail(self).deliver_now
+
+    result = TicketMailer.recieve_mail(self).deliver_now
+    puts self.email
+    puts self.name
+    puts ENV['MAILGUN_LOGIN']
   end
 end
