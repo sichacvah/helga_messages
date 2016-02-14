@@ -81,7 +81,7 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
     post: 587,
-    address: 'smtp.maigun.org',
+    address: 'smtp.mailgun.org',
     domain: ENV['MAILGUN_DOMAIN'],
     user_name: ENV['MAILGUN_LOGIN'],
     password: ENV['MAILGUN_PASSWORD'],

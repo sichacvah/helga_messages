@@ -1,0 +1,4 @@
+<p> Вы получили сообщение от: <%= @ticket.name %> </p>
+<p> <%= @ticket.message %> </p>
+
+<p><%= link_to "Сообщение", admin_ticket_url(@ticket) %></p>
