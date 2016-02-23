@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+
+gem 'fog'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,11 +26,21 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'carrierwave'
+
+gem 'mini_magick'
+
 gem "administrate", "~> 0.1.3"
 
 gem 'bitters'
 gem 'bourbon'
 gem 'neat'
+
+gem 'grape'
+
+gem 'roar'
+
+gem 'grape-roar'
 
 gem 'rack-cors', :require => 'rack/cors'
 
