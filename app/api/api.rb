@@ -6,4 +6,5 @@ class API < Grape::API
   content_type :json, 'application/json; charset=utf-8'
 
   mount Market::ProductsData
+  mount Market::OrdersCreate
 end

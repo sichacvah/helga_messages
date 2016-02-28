@@ -12,7 +12,9 @@ class DashboardManifest
   DASHBOARDS = [
     :tickets,
     :products,
-    :variants
+    :variants,
+    :orders,
+    :order_items
   ]
 
   # `ROOT_DASHBOARD`

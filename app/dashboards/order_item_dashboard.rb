@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProductDashboard < Administrate::BaseDashboard
+class OrderItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,10 +8,10 @@ class ProductDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    variants: Field::HasMany,
+    order: Field::BelongsTo,
+    variant: Field::BelongsTo,
     id: Field::Number,
-    name: Field::String,
-    min: Field::Number,
+    count: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -22,36 +22,36 @@ class ProductDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :variants,
+    :order,
+    :variant,
     :id,
-    :name,
-    :created_at,
+    :count,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :order,
+    :variant,
     :id,
-    :name,
-    :min,
+    :count,
     :created_at,
     :updated_at,
-    :variants
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name,
-    :min,
-    :variants,
+    :order,
+    :variant,
+    :count,
   ]
 
-  # Overwrite this method to customize how products are displayed
+  # Overwrite this method to customize how order items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(product)
-  #   "Product ##{product.id}"
+  # def display_resource(order_item)
+  #   "OrderItem ##{order_item.id}"
   # end
 end
